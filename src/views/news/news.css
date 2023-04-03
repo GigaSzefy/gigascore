@@ -1,0 +1,33 @@
+.news-board {
+    display: flex;
+    
+}
+
+.articles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.article {
+    width: 500px;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+
+.art-img {
+    position: absolute;
+    width: 100%;
+    z-index: 6;
+}
+
+.art-text {
+    z-index: 34;
+}
