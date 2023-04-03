@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import './news.css';
+import { Article } from '../../types/news';
+
 
 const NewsView: React.FC = () => {
 
-    const [news, setNews] = useState([]);
+    const [news, setNews] = useState<Article[]>([]);
 
     useEffect(() => {
 
-        const apiURL = `https://newsapi.org/v2/everything?q=football&from=2023-04-01&sortBy=popularity&apiKey=ee1e6126ee11484fb715297f8fd1d85a`
+        const apiURL = `https://newsapi.org/v2/everything?q=sport&from=2023-04-01&sortBy=popularity&apiKey=ee1e6126ee11484fb715297f8fd1d85a`
     
         fetch(apiURL) 
           .then(response => response.json())
