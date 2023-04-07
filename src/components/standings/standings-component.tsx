@@ -19,6 +19,21 @@ const LeagueStandings: React.FC = () => {
     
   }, [leagueId]);
 
+
+  const formatLetter = (letter: string): string => {
+    switch (letter) {
+      case 'W':
+        return 'win';
+      case 'D':
+        return 'draw';
+      case 'L':
+        return 'loss';
+      default:
+        return '';
+    }
+  };
+
+
   return (
     <div className="standings-container">
       {standingsData.map((item) => (
@@ -56,7 +71,11 @@ const LeagueStandings: React.FC = () => {
              <td>{standingsitem.all.lose}</td>
              <td>{standingsitem.all.goals.for}:{standingsitem.all.goals.against}</td>
              <td>{standingsitem.points}</td>
-             <td>{standingsitem.form}</td>
+             <td>
+             {standingsitem.form.split('').map((letter, index) => (
+                <span key={index} className={` team-form-letter ${formatLetter(letter)}`}>{letter}</span>
+             ))}
+             </td>
              </tr>
            
            
