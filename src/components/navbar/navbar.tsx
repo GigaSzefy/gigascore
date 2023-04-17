@@ -5,7 +5,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarLogoContainer}>
-        <a href="#" className={styles.navbarLogo}>
+        <a href="/" className={styles.navbarLogo}>
           GIGAScore
         </a>
       </div>
