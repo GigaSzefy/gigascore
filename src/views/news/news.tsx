@@ -15,11 +15,8 @@ const NewsView: React.FC = () => {
           .then(response => response.json())
           .then(data => setNews(data.articles))
           .catch(err => console.error(err));
-    
       }, []);
     
-    
-
   return (
       <div className='articles'>
           {news.map(article => (
@@ -27,6 +24,7 @@ const NewsView: React.FC = () => {
               <img src={article.urlToImage} alt={article.title} className='art-img' />
               <div className='art-text'>
                 <h2>{article.title}</h2>
+                <div className='br'></div>
                 <p>{article.description}</p>
               </div>
             </div>
