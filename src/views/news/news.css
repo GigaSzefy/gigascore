@@ -14,20 +14,54 @@
 
 .article {
     width: 500px;
-    height: 280px;
+    height: 250px;
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    z-index: 2;
+    z-index: 1;
 }
 
 
 .art-img {
     position: absolute;
     width: 100%;
-    z-index: 6;
+    z-index: 2;
 }
 
 .art-text {
-    z-index: 34;
+    position: absolute;
+    color: white;
+    height: 25%;
+    background-color: rgba(0, 0, 0, 0.7);;
+    bottom: 0;
+    z-index: 3;
+    transition: height .3s;
+}
+
+.art-text h2 {
+    position: relative;
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.art-text p {
+    opacity: 0;
+    padding: 0 10px;
+    margin-bottom: 5px;
+    transition: opacity 1s;
+}
+
+.article:hover .art-text p {
+    opacity: 1;
+}
+
+.article:hover .art-text {
+    height: 75%;
+}
+
+.br {
+    width: 60%;
+    border: 1px solid #FFA553;
 }
