@@ -9,18 +9,21 @@
     justify-content:flex-start;
     gap:8px;
     margin:12px;
-    
+    color: white;
+    padding: 2px;
 }
 
 .league-container:hover {
     background-color: gray;
     border-radius: 8px;
     cursor: pointer;
-    opacity: 0.5;
 }
 
 .league-header {
     display: flex;
     justify-content: flex-start;
-    margin:12px
+    margin:12px;
+    color: white;
+    margin-bottom: 30px;
 }
+
