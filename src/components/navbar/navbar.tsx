@@ -13,13 +13,10 @@ const Navbar: React.FC = () => {
       <div className={styles.centeredLinks}>
         <ul className={styles.navbarCenteredLinks}>
           <li className={styles.navbarLink}>
-            <a href="#">RESULTS</a>
+            <a href="/">RESULTS</a>
           </li>
           <li className={styles.navbarLink}>
-            <a href="#">RANKING</a>
-          </li>
-          <li className={styles.navbarLink}>
-            <a href="#">NEWS</a>
+            <a href="/news">NEWS</a>
           </li>
         </ul>
       </div>
