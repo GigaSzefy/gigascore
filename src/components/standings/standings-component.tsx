@@ -64,18 +64,20 @@ const LeagueStandings: React.FC = () => {
             
            <tr key={standingsitem.team.id}>
              <td> {standingsitem.rank}</td>
-             <td><img className="team-logo-table" title="logo" src={standingsitem.team.logo} />{standingsitem.team.name}</td>
+             <td><img className="team-logo-table" title="logo" src={standingsitem.team.logo} /><span>{standingsitem.team.name}</span></td>
              <td>{standingsitem.all.played}</td>
              <td>{standingsitem.all.win}</td>
              <td>{standingsitem.all.draw}</td>
              <td>{standingsitem.all.lose}</td>
              <td>{standingsitem.all.goals.for}:{standingsitem.all.goals.against}</td>
              <td>{standingsitem.points}</td>
+            
              <td>
              {standingsitem.form.split('').map((letter, index) => (
                 <span key={index} className={` team-form-letter ${formatLetter(letter)}`}>{letter}</span>
              ))}
              </td>
+            
              </tr>
            
            
