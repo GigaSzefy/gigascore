@@ -1,0 +1,16 @@
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.leaguelist-container {
+  width: 250px;
+  margin-right: 20px;
+}
+
+.maincontent-container {
+  flex: 1;
+}
