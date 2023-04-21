@@ -48,7 +48,7 @@ const apiFootballDef = () => {
         {
           headers: {
             "x-rapidapi-host": "v3.football.api-sports.io",
-            "x-rapidapi-key": "7e909719d899edf4d9bc9ccaf6028a9c",
+            "x-rapidapi-key": "94337dbc15c3cf0523d05600a1c53300",
           },
         }
       );
