@@ -44,11 +44,12 @@ const apiFootballDef = () => {
   const getLiveMatches = async (): Promise<LiveMatchesType[] | undefined> => {
     try {
       const response = await fetch(
-        "https://v3.football.api-sports.io/fixtures?live=all",
+        "https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all",
         {
           headers: {
-            "x-rapidapi-host": "v3.football.api-sports.io",
-            "x-rapidapi-key": "7e909719d899edf4d9bc9ccaf6028a9c",
+            "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+            "x-rapidapi-key":
+              "2e249a0388msh0d061ad76067ad9p16209fjsncbf5825e197c",
           },
         }
       );
