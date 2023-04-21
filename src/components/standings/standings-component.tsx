@@ -37,56 +37,53 @@ const LeagueStandings: React.FC = () => {
   return (
     <div className="standings-container">
       {standingsData.map((item) => (
-        <div className="league-header" key={item.league.id}>
-        <img title="logo" src={item.league.logo}></img>
-        <h1>{item.league.name}</h1>
-        <p>{item.league.season}</p>
+        <div className="header-league" key={item.league.id}>
+        <div className="header-logo"><img  title="logo" src={item.league.logo}></img></div>
+        <div className="header-name">{item.league.name}</div>
+        <div className="header-season">{item.league.season}</div>
         </div>
       ))}
-      <table className="standings">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Team</th>
-            <th title="Matches played">MP</th>
-            <th title="Wins">W</th>
-            <th title="Draws">D</th>
-            <th title="Losses">L</th>
-            <th title="Goals">G</th>
-            <th title="Points">PTS</th>
-            <th title="Form">Form</th>
-          </tr>
-        </thead>
-        <tbody>
-       {standingsData.map((item) => (
-        item.league.standings.map((standings) => (
-          standings.map((standingsitem) => (
-            
-           <tr key={standingsitem.team.id}>
-             <td> {standingsitem.rank}</td>
-             <td><img className="team-logo-table" title="logo" src={standingsitem.team.logo} /><span>{standingsitem.team.name}</span></td>
-             <td>{standingsitem.all.played}</td>
-             <td>{standingsitem.all.win}</td>
-             <td>{standingsitem.all.draw}</td>
-             <td>{standingsitem.all.lose}</td>
-             <td>{standingsitem.all.goals.for}:{standingsitem.all.goals.against}</td>
-             <td>{standingsitem.points}</td>
-            
-             <td>
-             {standingsitem.form.split('').map((letter, index) => (
-                <span key={index} className={` team-form-letter ${formatLetter(letter)}`}>{letter}</span>
-             ))}
-             </td>
-            
-             </tr>
-           
-           
+      <div className="table-container">
+      <div className="standings">
+      <div className="standings-header">
+        <div className="header-rank">#</div>
+        <div className="header-team">Team</div>
+        <div className="header-mp" title="Matches played">MP</div>
+        <div className="header-w" title="Wins">W</div>
+        <div className="header-d" title="Draws">D</div>
+        <div className="header-l" title="Losses">L</div>
+        <div className="header-g" title="Goals">G</div>
+        <div className="header-pts" title="Points">PTS</div>
+        <div className="header-form" title="Form">Form</div>
+      </div>
+      <div className="standings-body">
+        {standingsData.map((item) => (
+          item.league.standings.map((standings) => (
+            standings.map((standingsitem) => (
+              <div className="standings-row" key={standingsitem.team.id}>
+                <div className="row-rank">{standingsitem.rank}</div>
+                <div className="row-team">
+                  <img className="team-logo-table" title="logo" src={standingsitem.team.logo} alt={`${standingsitem.team.name} logo`} />
+                  <span>{standingsitem.team.name}</span>
+                </div>
+                <div className="row-mp">{standingsitem.all.played}</div>
+                <div className="row-w">{standingsitem.all.win}</div>
+                <div className="row-d">{standingsitem.all.draw}</div>
+                <div className="row-l">{standingsitem.all.lose}</div>
+                <div className="row-g">{standingsitem.all.goals.for}:{standingsitem.all.goals.against}</div>
+                <div className="row-pts">{standingsitem.points}</div>
+                <div className="row-form">
+                  {standingsitem.form.split('').map((letter, index) => (
+                    <span key={index} className={`team-form-letter ${formatLetter(letter)}`}>{letter}</span>
+                  ))}
+                </div>
+              </div>
+            ))
           ))
-        ))
-       ))}
-       </tbody>
-        
-      </table>
+        ))}
+      </div>
+    </div>
+    </div>
     </div>
   );
 };

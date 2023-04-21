@@ -1,83 +1,113 @@
-.standings-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 10px;
-    color: white;
+.header-league {
+  display: grid;
+  grid-column-gap: 16px;
+  grid-template:        " logo1 title logo2 " 1fr
+  " logo1 info logo2 " max-content/max-content 1fr max-content;
+  font-size: 18px;
+  text-align: left;
+  
+}
+
+.header-logo {
+  grid-area: logo1;
+  height: 16vh;
+  width: 16vh;
+  background-color: #fff;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-logo img {
+  
+  height: 14vh;
+  width: 12vh;
+  
+ 
+}
+
+.header-name {
+  grid-area: title;
+}
+.header-season {
+  grid-area:info;
+  font-size: 14px;
+}
+
+
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+
+}
+
+.standings {
+  width: 100vh;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+ 
+}
+
+.standings-header,
+.standings-row {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.standings-header {
+  font-weight: bold;
+}
+
+
+.header-rank,
+.row-rank {
+  width: 5%;
+}
+
+.header-team,
+.row-team {
+  width: 30%;
+  display: flex;
+  align-items: center;
 }
 
 .team-logo-table {
-    width: 25px;
-    height: 25px;
-}
-.league-header {
-    display: flex;
-   justify-content:flex-start;
-   align-items: center;
-   gap: 50px;
-}
-.league-header img {
-    width: 50px;
-    height: 50px;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
 }
 
-table {
-  table-layout: fixed;
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin: 0;
-  padding: 0;
-  width: 80%;
-  font-size: 14px;
-  line-height: 1.5;
-   
-  }
-  
+.header-mp,
+.row-mp {
+  width: 5%;
+}
 
-  
+.header-w,
+.row-w,
+.header-d,
+.row-d,
+.header-l,
+.row-l,
+.header-g,
+.row-g,
+.header-pts,
+.row-pts {
+  width: 7.5%;
+  text-align: center;
+}
 
-  table.standings th {
-    font-weight: bold;
-    text-align: center;
-    padding: 8px;
-    
-  }
-  
- 
-  table.standings td {
-    text-align: center;
-    padding: 4px;
-    border-bottom: 1px solid #808080;
-   
-   
-  }
-  
-  table.standings thead th:first-child {
-    width: 5%;
-  }
-  
-  table.standings thead th:nth-child(2),
-  table.standings tbody td:nth-child(2),
-  table.standings thead th:nth-child(9),
-  table.standings tbody td:nth-child(9) {
-   text-align: left;
-
-  }
-  
-  table.standings thead th:nth-child(3),
-  table.standings th:nth-child(4),
-  table.standings th:nth-child(5),
-  table.standings th:nth-child(6),
-  table.standings th:nth-child(7),
-  table.standings th:nth-child(8) {
-    width: 5%;
-  }
-  
-  table.standings tbody td:first-child {
-    width: 5%;
-  }
+.header-form,
+.row-form {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
 
 
 
