@@ -21,19 +21,22 @@ const LeagueList: React.FC = () => {
 
   return (
     <>
-      <p className="league-header"> ⭐ My Leagues</p>
-      {topLeagues.map((item) => (
-        <div
-          key={item.league.id}
-          className="league-container"
-          onClick={() => navigate(`/standings/${item.league.id}`)}
-        >
-          <span className="league-logo">
-            <img src={item.league.logo} alt="logo" />
-          </span>
-          <span className="league-name">{item.league.name}</span>
-        </div>
-      ))}
+      <div className="my-leagues">
+        <p className="league-header"> ⭐ My Leagues</p>
+        <hr />
+        {topLeagues.map((item) => (
+          <div
+            key={item.league.id}
+            className="league-container"
+            onClick={() => navigate(`/standings/${item.league.id}`)}
+          >
+            <span className="league-logo">
+              <img src={item.league.logo} alt="logo" />
+            </span>
+            <span className="league-name">{item.league.name}</span>
+          </div>
+        ))}
+      </div>
     </>
   );
 };

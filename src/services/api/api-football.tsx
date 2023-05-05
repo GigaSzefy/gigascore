@@ -44,7 +44,7 @@ const apiFootballDef = () => {
   const getLiveMatches = async (): Promise<LiveMatchesType[] | undefined> => {
     try {
       const response = await fetch(
-        "https://v3.football.api-sports.io/fixtures?live=all",
+        "https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all",
         {
           headers: {
             "x-rapidapi-host": "v3.football.api-sports.io",
