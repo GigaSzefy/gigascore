@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { ApiFootball } from "../../services/api/api-football";
 import { LeagueData } from "../../types/standings";
 import "./standings-component.css"
+import { Link } from "react-router-dom";
 
 const LeagueStandings: React.FC = () => {
   const [standingsData, setStandingsData] = useState<LeagueData[]>([]);
   const { leagueId } = useParams<{ leagueId: string }>();
-
+  const [path, setPath] = useState("");
   const parsedLeagueId = parseInt(leagueId ?? "0", 10);
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
@@ -34,6 +36,7 @@ const LeagueStandings: React.FC = () => {
   };
 
 
+
   return (
     <div className="standings-container">
       {standingsData.map((item) => (
@@ -43,6 +46,13 @@ const LeagueStandings: React.FC = () => {
         <div className="header-season">{item.league.season}</div>
         </div>
       ))}
+       <div className="tabs">
+ 
+      <Link to={'/'}>Standings</Link>
+      <Link to={'news'}>News</Link>
+      <Link to={'fixtures'}>Fixtures</Link>
+      
+      </div>
       <div className="table-container">
       <div className="standings">
       <div className="standings-header">

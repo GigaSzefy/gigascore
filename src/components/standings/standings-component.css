@@ -35,6 +35,22 @@
 }
 
 
+.tabs {
+  display: flex;
+  margin: 12px 0 12px 0;
+  justify-content: flex-start;
+  gap:12px
+}
+.tabs a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color:white;
+  padding: 12px;
+  border-bottom:2px solid black;
+}
+
 
 .table-container {
   display: flex;
