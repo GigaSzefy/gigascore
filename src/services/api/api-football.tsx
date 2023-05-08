@@ -47,8 +47,9 @@ const apiFootballDef = () => {
         "https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all",
         {
           headers: {
-            "x-rapidapi-host": "v3.football.api-sports.io",
-            "x-rapidapi-key": "94337dbc15c3cf0523d05600a1c53300",
+            "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+            "x-rapidapi-key":
+              "2e249a0388msh0d061ad76067ad9p16209fjsncbf5825e197c",
           },
         }
       );
