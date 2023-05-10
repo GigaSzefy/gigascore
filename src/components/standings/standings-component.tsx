@@ -4,22 +4,14 @@ import { ApiFootball } from "../../services/api/api-football";
 import { LeagueData } from "../../types/standings";
 import "./standings-component.css"
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../../app/hooks";
+import { selectStandings } from "../../slices/standings-slice";
 
 const LeagueStandings: React.FC = () => {
-  const [standingsData, setStandingsData] = useState<LeagueData[]>([]);
-  const { leagueId } = useParams<{ leagueId: string }>();
-  const [path, setPath] = useState("");
-  const parsedLeagueId = parseInt(leagueId ?? "0", 10);
-  const navigate = useNavigate();
+  
 
-  useEffect(() => {
-    (async () => {
-      const standings = await ApiFootball.getStandings(parsedLeagueId, 2022);
-      console.log(standings);
-     standings && setStandingsData(standings);
-    })();
-    
-  }, [leagueId]);
+ let standingsData = useAppSelector(selectStandings)
+ 
 
 
   const formatLetter = (letter: string): string => {
@@ -39,7 +31,7 @@ const LeagueStandings: React.FC = () => {
 
   return (
     <div className="standings-container">
-      {standingsData.map((item) => (
+      {standingsData.standings.map((item) => (
         <div className="header-league" key={item.league.id}>
         <div className="header-logo"><img  title="logo" src={item.league.logo}></img></div>
         <div className="header-name">{item.league.name}</div>
@@ -48,7 +40,7 @@ const LeagueStandings: React.FC = () => {
       ))}
        <div className="tabs">
  
-      <Link to={'/'}>Standings</Link>
+      <Link to={''}>Standings</Link>
       <Link to={'news'}>News</Link>
       <Link to={'fixtures'}>Fixtures</Link>
       
@@ -67,7 +59,7 @@ const LeagueStandings: React.FC = () => {
         <div className="header-form" title="Form">Form</div>
       </div>
       <div className="standings-body">
-        {standingsData.map((item) => (
+        {standingsData.standings.map((item) => (
           item.league.standings.map((standings) => (
             standings.map((standingsitem) => (
               <div className="standings-row" key={standingsitem.team.id}>
