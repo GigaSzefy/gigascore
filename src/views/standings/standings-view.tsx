@@ -1,12 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import LeagueList from "../../components/leagueslist/leaguelist";
-import LeagueStandings from "../../components/standings/standings-component";
-import { useDispatch } from "react-redux";
-import { getStandingsAsync } from "../../slices/standings-slice";
-import { AppDispatch, AppThunk } from "../../app/store";
-import { unwrapResult } from "@reduxjs/toolkit";
+import { getStandingsAsync, getTopscorersAsync } from "../../slices/standings-slice";
 import { useAppDispatch } from "../../app/hooks";
+import LeagueInfo from "../../components/league-info/league-info";
 
 const StandingsView: React.FC = () => {
     const { leagueId } = useParams<{ leagueId: string }>();
@@ -15,6 +12,7 @@ const StandingsView: React.FC = () => {
     const getStandings = async ():Promise<void> => {
       if(leagueId) {
         dispatch(getStandingsAsync(parsedLeagueId))
+        dispatch(getTopscorersAsync(parsedLeagueId))
         
       }
     }
@@ -26,7 +24,7 @@ const StandingsView: React.FC = () => {
   return <div className="home-container">
     <div className="leaguelist-container"><LeagueList /></div>
     <div className="maincontent-container"> 
-    <LeagueStandings />
+    <LeagueInfo />
       </div>
 
   </div>;

@@ -1,0 +1,54 @@
+.table-container {
+  display: flex;
+  font-size: 14px;
+}
+
+.topscorers {
+  width: 100vh;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.topscorers-header,
+.topscorers-row {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.topscorers-header {
+  font-weight: bold;
+}
+
+.header-rank-players,
+.row-rank-players {
+  width: 5%;
+}
+.header-player,
+.row-player {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.row-player img {
+  width: 40px;
+
+}
+
+.header-team,
+.row-team {
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.header-goals,
+.row-goals,
+.header-assists,
+.row-assists {
+  width: 5%;
+  display: flex;
+}

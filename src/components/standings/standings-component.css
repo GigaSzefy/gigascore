@@ -1,60 +1,7 @@
-.header-league {
-  display: grid;
-  grid-column-gap: 16px;
-  grid-template:        " logo1 title logo2 " 1fr
-  " logo1 info logo2 " max-content/max-content 1fr max-content;
-  font-size: 18px;
-  text-align: left;
-  
-}
-
-.header-logo {
-  grid-area: logo1;
-  height: 16vh;
-  width: 16vh;
-  background-color: #fff;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.header-logo img {
-  
-  height: 14vh;
-  width: 12vh;
-  
- 
-}
-
-.header-name {
-  grid-area: title;
-}
-.header-season {
-  grid-area:info;
-  font-size: 14px;
-}
-
-
-.tabs {
-  display: flex;
-  margin: 12px 0 12px 0;
-  justify-content: flex-start;
-  gap:12px
-}
-.tabs a {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: bold;
-  color:white;
-  padding: 12px;
-  border-bottom:2px solid black;
-}
 
 
 .table-container {
   display: flex;
-  justify-content: center;
   font-size: 14px;
 
 }
@@ -80,9 +27,36 @@
 
 
 .header-rank,
-.row-rank {
+.row-rank-container {
   width: 5%;
+  cursor: default
 }
+.row-rank {
+  width:26px;
+  justify-content: center;
+}
+.row-rank[title*="Champions League "] {
+  background-color: rgb(0, 70, 130);
+}
+.row-rank[title*=" UEFA Champions League "] {
+  background-color: rgb(0, 70, 130);
+}
+.row-rank[title*="Europa League "] {
+  background-color:rgb(127, 0, 41);
+}
+.row-rank[title*=" UEFA Europa League "] {
+  background-color:rgb(127, 0, 41);
+}
+.row-rank[title*="Europa Conference League"] {
+  background-color:rgb(184, 134, 11);
+}
+.row-rank[title*=" UEFA Conference League"] {
+  background-color:rgb(184, 134, 11);
+}
+.row-rank[title*="Relegation"] {
+  background-color:rgb(189, 0, 0);
+}
+
 
 .header-team,
 .row-team {

@@ -1,3 +1,4 @@
+import { PlayerStats } from "../../types/TopScorers";
 import { LiveMatchesType } from "../../types/liveMatches";
 import { LeagueData } from "../../types/standings";
 
@@ -12,7 +13,7 @@ const apiFootballDef = () => {
         },
       };
       const response = await fetch(
-        "https://v3.football.api-sports.io/leagues",
+        "https://v3.football.api-sports.io/leagues?type=league",
         options
       );
       const standings = await response.json();
@@ -41,6 +42,27 @@ const apiFootballDef = () => {
     } catch (error) {}
   };
 
+  const getLeagueTopScorers = async (
+    league: number,
+    season: number
+  ): Promise<PlayerStats[] | undefined> => {
+    try {
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key": "7e909719d899edf4d9bc9ccaf6028a9c",
+          "X-RapidAPI-Host": "v3.football.api-sports.io",
+        },
+      };
+      const response = await fetch(
+        `https://v3.football.api-sports.io/players/topscorers?season=${season}&league=${league}`,
+        options
+      );
+      const topscorers = await response.json();
+      return topscorers.response;
+    } catch (error) {}
+  };
+
   const getLiveMatches = async (): Promise<LiveMatchesType[] | undefined> => {
     try {
       const response = await fetch(
@@ -58,7 +80,7 @@ const apiFootballDef = () => {
     } catch (error) {}
   };
 
-  return { getLeagues, getStandings, getLiveMatches };
+  return { getLeagues, getStandings, getLiveMatches, getLeagueTopScorers };
 };
 
 export const ApiFootball = apiFootballDef();
