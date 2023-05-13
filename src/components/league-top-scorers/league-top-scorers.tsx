@@ -27,7 +27,7 @@ const LeagueTopScorers: React.FC = () => {
 
                   <div className="row-team">{stat.team.name}</div>
                   <div className="row-goals">{stat.goals.total} </div>
-                  <div className="row-assists">{stat.goals.assists} </div>
+                  <div className="row-assists">{stat.goals.assists  === null ? 0 : stat.goals.assists } </div>
                 </div>
               ))
             )}
