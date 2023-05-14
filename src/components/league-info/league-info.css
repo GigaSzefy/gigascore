@@ -1,0 +1,56 @@
+.header-league {
+    display: grid;
+    grid-column-gap: 16px;
+    grid-template:        " logo1 title logo2 " 1fr
+    " logo1 info logo2 " max-content/max-content 1fr max-content;
+    font-size: 18px;
+    text-align: left;
+    
+  }
+  
+  .header-logo {
+    grid-area: logo1;
+    height: 16vh;
+    width: 16vh;
+    background-color: #fff;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-logo img {
+    
+    height: 14vh;
+    width: 12vh;
+    
+   
+  }
+  
+  .header-name {
+    grid-area: title;
+  }
+  .header-season {
+    grid-area:info;
+    font-size: 14px;
+  }
+  
+  
+  .tabs {
+    display: flex;
+    margin: 12px 0 12px 0;
+    justify-content: flex-start;
+    gap:12px
+  }
+  .tabs p {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px;
+    cursor:pointer;
+  }
+
+ .active-tab {
+    border-bottom:2px solid #FFA553;
+    color:#FFA553;
+   
+ }

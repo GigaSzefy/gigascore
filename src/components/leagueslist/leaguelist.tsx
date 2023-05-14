@@ -9,7 +9,7 @@ const LeagueList: React.FC = () => {
   const navigate = useNavigate();
 
   const [leagueListData, setleagueListData] = useState<LeagueListType[]>([]);
-  const topLeagues = leagueListData.slice(0, 10);
+  const topLeagues = leagueListData.slice(1, 11);
 
   useEffect(() => {
     (async () => {
