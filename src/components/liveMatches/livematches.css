@@ -1,0 +1,13 @@
+.logo {
+    height: 120px;
+}
+
+.matchDiv {
+    border-radius: 10px;
+    width: 50vw;
+    margin: auto;
+    font-size: 25px;
+    margin-bottom: 20px;
+    background-color: #272727;
+    padding: 10px;
+}
