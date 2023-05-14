@@ -1,7 +1,8 @@
 import React from "react";
 import "./standings-component.css";
-import { useAppSelector } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectStandings } from "../../slices/standings-slice";
+import { getCustomNewsAsync } from "../../slices/news-slice";
 
 const LeagueStandings: React.FC = () => {
   let standingsData = useAppSelector(selectStandings);
