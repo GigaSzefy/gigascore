@@ -16,15 +16,18 @@ const NewsComponent: React.FC = () => {
       }, []);
     
   return (
+      
       <div className='articles'>
           {news.map(article => (
             <div key={article.title} className='article'>
-              <img src={article.urlToImage} alt={article.title} className='art-img' />
-              <div className='art-text'>
-                <h2>{article.title}</h2>
-                <div className='br'></div>
-                <p>{article.description}</p>
-              </div>
+              <a className='news=link' href={article.url} target='_blank'>
+                <img src={article.urlToImage} alt={article.title} className='art-img' />
+                <div className='art-text'>
+                  <h2>{article.title}</h2>
+                  <div className='br'></div>
+                  <p>{article.description}</p>
+                </div>
+              </a>
             </div>
           ))}
       </div>
