@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { Article } from '../../types/news';
+import React from 'react';
 import NewsComponent from '../../components/newsComponent/newsComponent';
 
 const NewsView: React.FC = () => {
