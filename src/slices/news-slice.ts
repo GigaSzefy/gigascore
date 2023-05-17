@@ -27,6 +27,7 @@ export const newsSlice = createSlice({
   },
 });
 
-export const selectNews = (state: RootState) => state.news.news;
+export const selectNews = (state: RootState) =>
+  state.news.news.filter((article) => article.urlToImage);
 
 export default newsSlice.reducer;

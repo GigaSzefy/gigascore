@@ -21,7 +21,7 @@ const NewsComponent: React.FC = () => {
             <div className="art-text">
               <h2>{article.title}</h2>
               <div className="br"></div>
-              <p>{article.description}</p>
+              <p dangerouslySetInnerHTML={{ __html: article.description }}></p>
             </div>
           </a>
         </div>
