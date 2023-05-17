@@ -2,18 +2,11 @@ import React, { useEffect, useState } from "react";
 import { LiveMatchesType } from "../../types/liveMatches";
 import "./livematches.css";
 import { ApiFootball } from "../../services/api/api-football";
+import { useAppSelector } from "../../app/hooks";
+import { selectFixtures } from "../../slices/liveMatches-slice";
 
 const LiveMatches: React.FC = () => {
-  const [liveMatches, setLiveMatches] = useState<LiveMatchesType[]>([]);
-
-  useEffect(() => {
-    const fetchLiveMatches = async () => {
-      const data = await ApiFootball.getLiveMatches();
-      setLiveMatches(data || []);
-    };
-
-    fetchLiveMatches();
-  }, []);
+  const liveMatches = useAppSelector(selectFixtures);
 
   const convertTimestampToTime = (timestamp: number): string => {
     const date = new Date(timestamp * 1000);
