@@ -5,6 +5,7 @@ import { getStandingsAsync, getTopscorersAsync } from "../../slices/standings-sl
 import { useAppDispatch } from "../../app/hooks";
 import LeagueInfo from "../../components/league-info/league-info";
 import { getCustomNewsAsync } from "../../slices/news-slice";
+import "./standings-view.css"
 
 const StandingsView: React.FC = () => {
     const { leagueId } = useParams<{ leagueId: string }>();
@@ -25,7 +26,7 @@ const StandingsView: React.FC = () => {
     
   return <div className="home-container">
     <div className="leaguelist-container"><LeagueList /></div>
-    <div className="maincontent-container"> 
+    <div className="mainstandings-container"> 
     <LeagueInfo />
       </div>
 
