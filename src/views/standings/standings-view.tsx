@@ -8,12 +8,14 @@ import { getCustomNewsAsync } from "../../slices/news-slice";
 
 const StandingsView: React.FC = () => {
     const { leagueId } = useParams<{ leagueId: string }>();
+    const {leagueName} = useParams<{leagueName:string}>();
     const parsedLeagueId = parseInt(leagueId ?? "0", 10);
     const dispatch = useAppDispatch();
     const getStandings = async ():Promise<void> => {
-      if(leagueId) {
+      if(leagueId && leagueName) {
         dispatch(getStandingsAsync(parsedLeagueId))
         dispatch(getTopscorersAsync(parsedLeagueId))
+        dispatch(getCustomNewsAsync(leagueName))
       }
     }
 
