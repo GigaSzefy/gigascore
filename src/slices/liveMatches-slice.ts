@@ -5,10 +5,12 @@ import { RootState } from '../app/store';
 
 interface MatchesState {
 	liveMatches: LiveMatchesType[];
+	leagueliveMatches: LiveMatchesType[];
 }
 
 const initialState: MatchesState = {
 	liveMatches: [],
+	leagueliveMatches: []
 };
 
 export const getFixturesAsync = createAsyncThunk(
@@ -19,6 +21,15 @@ export const getFixturesAsync = createAsyncThunk(
 	}
 );
 
+export const getLeagueResultAsync = createAsyncThunk(
+	'leagueLiveMatches / fetch leaguefixtures',
+	async (leagueId:number) => {
+		const leagueresults = await ApiFootball.getLeagueLastMatches(leagueId);
+		
+		return leagueresults
+	}
+)
+
 export const fixturesSlice = createSlice({
 	name: 'fixtures',
 	initialState,
@@ -26,9 +37,14 @@ export const fixturesSlice = createSlice({
 	extraReducers: (builder) => {
 		builder.addCase(getFixturesAsync.fulfilled, (state, action) => {
 			state.liveMatches = action.payload || [];
-		});
+			
+		})
+		.addCase(getLeagueResultAsync.fulfilled, (state, action) => {
+			state.leagueliveMatches = action.payload || [];
+		})
 	},
 });
 
 export const selectFixtures = (state: RootState) => state.fixtures.liveMatches;
+export const selectLeagueResult = (state:RootState) => state.fixtures.leagueliveMatches;
 export default fixturesSlice.reducer;

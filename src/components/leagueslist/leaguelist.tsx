@@ -14,7 +14,6 @@ const LeagueList: React.FC = () => {
   useEffect(() => {
     (async () => {
       const standingsData = await ApiFootball.getLeagues();
-      console.log(standingsData);
       setleagueListData(standingsData);
     })();
   }, []);

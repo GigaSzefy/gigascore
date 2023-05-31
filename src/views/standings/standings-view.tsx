@@ -6,6 +6,7 @@ import { useAppDispatch } from "../../app/hooks";
 import LeagueInfo from "../../components/league-info/league-info";
 import { getCustomNewsAsync } from "../../slices/news-slice";
 import "./standings-view.css"
+import { getLeagueResultAsync } from "../../slices/liveMatches-slice";
 
 const StandingsView: React.FC = () => {
     const { leagueId } = useParams<{ leagueId: string }>();
@@ -17,6 +18,7 @@ const StandingsView: React.FC = () => {
         dispatch(getStandingsAsync(parsedLeagueId))
         dispatch(getTopscorersAsync(parsedLeagueId))
         dispatch(getCustomNewsAsync(leagueName))
+        dispatch(getLeagueResultAsync(parsedLeagueId))
       }
     }
 
