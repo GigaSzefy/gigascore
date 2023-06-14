@@ -13,7 +13,7 @@ const apiFootballDef = () => {
         },
       };
       const response = await fetch(
-        "https://v3.football.api-sports.io/leagues?type=league",
+        "https://v3.football.api-sports.io/leagues?type=league&",
         options
       );
       const standings = await response.json();

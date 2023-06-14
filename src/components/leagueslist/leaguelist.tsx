@@ -21,7 +21,7 @@ const LeagueList: React.FC = () => {
   return (
     <>
       <div className="my-leagues">
-        <p className="league-header"> ⭐ My Leagues</p>
+        <p className="league-header"> ⭐ Top Leagues</p>
         <hr />
         {topLeagues.map((item) => (
           <div
