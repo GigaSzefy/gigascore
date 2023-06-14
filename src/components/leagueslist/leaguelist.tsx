@@ -14,7 +14,6 @@ const LeagueList: React.FC = () => {
   useEffect(() => {
     (async () => {
       const standingsData = await ApiFootball.getLeagues();
-      console.log(standingsData);
       setleagueListData(standingsData);
     })();
   }, []);
@@ -28,7 +27,7 @@ const LeagueList: React.FC = () => {
           <div
             key={item.league.id}
             className="league-container"
-            onClick={() => navigate(`/standings/${item.league.id}`)}
+            onClick={() => navigate(`/standings/${item.league.id}/${item.league.name}`)}
           >
             <span className="league-logo">
               <img src={item.league.logo} alt="logo" />

@@ -5,8 +5,9 @@ import "./league-info.css"
 import LeagueStandings from "../standings/standings-component";
 import { useState } from "react";
 import LeagueNews from "../league-news/league-news";
-import LeagueFixtures from "../league-fixtures/league-fixtures";
+import LeagueFixtures from "../league-results/league-results";
 import LeagueTopScorers from "../league-top-scorers/league-top-scorers";
+import LeagueResult from "../league-results/league-results";
 
 
 const LeagueInfo : React.FC = () => {
@@ -31,13 +32,13 @@ const LeagueInfo : React.FC = () => {
           ))}
           <div className="tabs">
             <p className={activeTab === 'standings' ? 'active-tab' : ''} onClick ={ () => handleTab('standings')}>Standings</p>
-            <p className={activeTab === 'fixtures' ? 'active-tab' : ''} onClick={() => handleTab('fixtures')}>Fixtures</p>
+            <p className={activeTab === 'results' ? 'active-tab' : ''} onClick={() => handleTab('results')}>Results</p>
             <p className={activeTab ==='news' ? 'active-tab' : ''} onClick={() => handleTab('news')}>News</p>
             <p className={activeTab ==='top-scorers' ? 'active-tab' : ''} onClick={() => handleTab('top-scorers')}>Top Scorers</p>
           </div>
           <div>
             {activeTab === 'standings' && <LeagueStandings />}
-            {activeTab === 'fixtures' && <LeagueFixtures />}
+            {activeTab === 'results' && <LeagueResult />}
             {activeTab === 'news' && <LeagueNews />}
             {activeTab === 'top-scorers' && <LeagueTopScorers />}
           </div>

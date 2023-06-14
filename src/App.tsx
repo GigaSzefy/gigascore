@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeView />} />
           <Route path="ranking" element={<RankingView />} />
-          <Route path="/standings/:leagueId" element={<StandingsView />} />
+          <Route path="/standings/:leagueId/:leagueName" element={<StandingsView />} />
           <Route path="news" element={<NewsView />} />;
         </Routes>
       </BrowserRouter>

@@ -1,0 +1,43 @@
+.league-result-container{
+  font-size:14px;
+  margin-top: 12px;
+  padding: 6px;
+  height: 70px;
+  display:grid;
+  grid-template-columns: 1fr 2fr 3fr;
+  background-color:  #272727;
+  border-radius: 6px;
+  width: 100vh;
+
+}
+
+.league-result-date, .league-result-teams, .league-result-fulltime-score{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.league-result-teams, .league-result-fulltime-score{
+  flex-direction: column;
+  gap:5px;
+  
+}
+
+
+.league-result-teams {
+  display: flex;
+  flex-direction: column;
+}
+
+.league-result-home-container, .league-result-away-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:5px;
+}
+
+.league-result-teams  img {
+  width: 25px;
+  height: 25px;
+  
+}

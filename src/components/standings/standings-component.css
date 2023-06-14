@@ -1,8 +1,8 @@
 
-
 .table-container {
   display: flex;
   font-size: 14px;
+  
 
 }
 
@@ -10,6 +10,9 @@
   width: 100vh;
   border-collapse: collapse;
   margin-bottom: 1rem;
+  background-color:  #272727;
+  border-radius: 6px;
+  overflow: hidden;
  
 }
 

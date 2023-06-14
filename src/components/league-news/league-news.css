@@ -1,0 +1,65 @@
+
+
+
+.league-articles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.league-article {
+    width: 500px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+
+.league-art-img {
+    
+    width: 100%;
+    z-index: 2;
+}
+
+.league-art-text {
+    position: absolute;
+    color: white;
+    height: 25%;
+    background-color: rgba(0, 0, 0, 0.7);;
+    bottom: 0;
+    z-index: 3;
+    transition: height .3s;
+}
+
+.league-art-text h2 {
+    position: relative;
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.league-art-text p {
+    opacity: 0;
+    padding: 0 10px;
+    margin-bottom: 5px;
+    transition: opacity 1s;
+}
+
+.league-article:hover .league-art-text p {
+    opacity: 1;
+}
+
+.league-article:hover .league-art-text {
+    height: 75%;
+}
+
+.league-br {
+    width: 60%;
+    border: 1px solid #FFA553;
+}

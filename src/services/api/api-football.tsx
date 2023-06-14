@@ -79,8 +79,24 @@ const apiFootballDef = () => {
       return liveMatchesData.response;
     } catch (error) {}
   };
+  const getLeagueLastMatches = async (leagueId:number): Promise<LiveMatchesType[] | undefined> => {
+    try {
+      const response = await fetch(
+        `https://api-football-v1.p.rapidapi.com/v3/fixtures?league=${leagueId}&last=10`,
+        {
+          headers: {
+            "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+            "x-rapidapi-key":
+              "2e249a0388msh0d061ad76067ad9p16209fjsncbf5825e197c",
+          },
+        }
+      );
+      const liveMatchesData = await response.json();
+      return liveMatchesData.response;
+    } catch (error) {}
+  };
 
-  return { getLeagues, getStandings, getLiveMatches, getLeagueTopScorers };
+  return { getLeagues, getStandings, getLiveMatches, getLeagueTopScorers, getLeagueLastMatches};
 };
 
 export const ApiFootball = apiFootballDef();
